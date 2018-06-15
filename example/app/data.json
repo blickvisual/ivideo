@@ -1,0 +1,33 @@
+{
+  "chapters": [
+    {
+      "id": "main",
+      "src": "media/menu.mp4",
+      "onfinished": "loop",
+      "overlays": [
+        {
+          "position": ["23%", "42%"],
+          "dimension": ["13%", "25%"],
+          "href": "chapter1",
+          "hover": "overlays/overlay_left.png"
+        },
+        {
+          "position": ["24%", "56%"],
+          "dimension": ["14%", "28%"],
+          "href": "sayhi",
+          "hover": "overlays/overlay_right.png"
+        }
+      ]
+    },
+    {
+      "id": "chapter1",
+      "src": "media/hello.mp4",
+      "onfinished": "goto",
+      "goto": "main"
+    },
+    {
+      "id": "sayhi",
+      "function": "hello_world"
+    }
+  ]
+}

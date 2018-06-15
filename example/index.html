@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iVideo</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="../src/interactivevideo.js"></script>
+  <link type="text/css" rel="stylesheet" href="../src/interactivevideo.css">
+
+  <link type="text/css" rel="stylesheet" href="app/main.css">
+
+  
+</head>
+<body>
+  <div id="ivideo_container"></div>
+
+  <script>
+    $(document).ready(function() {
+
+      function hello_world()
+      {
+        window.location.href = "http://blick.ch";
+      }
+
+      var iVid = new iVideo({
+        "container": "#ivideo_container",
+        "json": "app/data.json",
+        "functions": [hello_world],
+        "ready": function(self) {
+          iVid.play("main");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
