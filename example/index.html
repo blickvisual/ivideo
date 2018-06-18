@@ -20,9 +20,11 @@
   <script>
     $(document).ready(function() {
 
-      function hello_world()
+      function hello_world(chapter)
       {
-        window.location.href = "http://blick.ch";
+        console.log(chapter);
+        alert("Hello world");
+        iVid.play("main");
       }
 
       var iVid = new iVideo({

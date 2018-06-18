@@ -61,7 +61,7 @@ Register with `on`
 * `function` When a function is called
 
 ## JSON Object
-Example. This configuration contains a video played in loop. A click on the middle ball will lead you another video (`video_1`). A click on the right ball will call the function `my_function`, which will redirect you to another website.
+Example. This configuration contains a video played in loop. A click on the middle ball will lead you another video (`video_1`). A click on the right ball will call the function `my_function`, which will show an alert box and plays the first video again.
 ```js
 {
   "chapters": [

@@ -62,9 +62,10 @@ iVideo.prototype.play = function(_chapter)
     this.options.functions.forEach(function (e) {
       if(e.name == chapter.function)
       {
-        e(chapter);
-        if(self.findCallbackByName("function"))
-          self.findCallbackByName("function")(chapter);
+        //Call Callback asynchron
+        setTimeout(function() {
+          e(chapter);
+        }, 0);    
         found = true;
         return;
       }
@@ -119,15 +120,12 @@ iVideo.prototype.prepare = function()
   self = this;
 
   //Add Videoelement to html
-  var html_template = $(`
-    <div id="ivideo_loader"></div>
-    <div id="ivideo_fader" class="ivideo_full_frame" style="display:none"></div>
-    <div id="ivideo_overlay" class="ivideo_full_frame">
-    </div>
-    <video width="100%" height="100%" playsinline>
-      <source src="" type="video/mp4">
-    </video>
-    `);
+  var html_template = $('<div id="ivideo_loader"></div>'
+    + '<div id="ivideo_fader" class="ivideo_full_frame" style="display:none"></div>'
+    + '<div id="ivideo_overlay" class="ivideo_full_frame"></div>'
+    + '<video width="100%" height="100%" playsinline>'
+    + '  <source src="" type="video/mp4">'
+    + '</video>');
   this.container.append(html_template);
 
   //store variable
